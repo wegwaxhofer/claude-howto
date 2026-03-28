@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "gateway": {
+      "type": "url",
+      "url": "http://192.168.1.65:3100/mcp"
+    }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/root/.claude/statusline-command.sh"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /root/.claude/hooks/notify-telegram.py"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /root/.claude/hooks/notify-telegram.py"
+          }
+        ]
+      }
+    ]
+  }
+}
